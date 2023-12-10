@@ -1,0 +1,175 @@
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `adminUser`, `adminPass`) VALUES
+(1, 'admin', 'admin');
+
+-- Dumping data for table `crosswordpuzzle1`
+--
+
+INSERT INTO `crosswordpuzzle1` (`crossPuzzle1_id`, `crossPuzzle1_score`, `Username`, `ID`, `quiz_date`) VALUES
+(19, 5, 'ShekinahMarie', 5, '2023-12-10'),
+(20, 0, 'ShekinahMarie', 5, '2023-12-10'),
+(21, 0, 'ShekinahMarie', 5, '2023-12-10');
+
+-- Dumping data for table `crosswordpuzzle2`
+--
+
+INSERT INTO `crosswordpuzzle2` (`crossPuzzle2_id`, `crossPuzzle2_score`, `Username`, `ID`, `quiz_date`) VALUES
+(9, 5, 'ShekinahMarie', 5, '2023-12-10');
+
+-- Dumping data for table `guessinggame1`
+--
+
+INSERT INTO `guessinggame1` (`guessingGame1_id`, `guessingGame1_score`, `Username`, `ID`, `quiz_date`) VALUES
+(8, 4, 'ShekinahMarie', 5, '2023-12-10'),
+(9, 4, 'ShekinahMarie', 5, '2023-12-10'),
+(10, 3, 'ShekinahMarie', 5, '2023-12-10');
+
+-- Dumping data for table `guessinggame2`
+--
+
+INSERT INTO `guessinggame2` (`guessingGame2_id`, `guessingGame2_score`, `Username`, `ID`, `quiz_date`) VALUES
+(7, 4, 'ShekinahMarie', 5, '2023-12-10'),
+(8, 1, 'ShekinahMarie', 5, '2023-12-10');
+
+-- Dumping data for table `multiplechoice`
+--
+
+INSERT INTO `multiplechoice` (`multipleChoice_id`, `multipleChoice_score`, `Username`, `ID`, `quiz_date`) VALUES
+(12, 3, 'ShekinahMarie', 5, '2023-12-10');
+
+-- Dumping data for table `user_information`
+--
+
+INSERT INTO `user_information` (`ID`, `FirstName`, `LastName`, `Birthdate`, `EmailAddress`, `Username`, `Password`) VALUES
+(5, 'Rusette Shekinah', 'Araneta', '2004-09-29', 'shekinaharaneta@gmail.com', 'ShekinahMarie', 'ShekinahMarie');
+
+
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
+-- Indexes for table `crosswordpuzzle1`
+--
+ALTER TABLE `crosswordpuzzle1`
+  ADD PRIMARY KEY (`crossPuzzle1_id`),
+  ADD KEY `ID` (`ID`);
+
+--
+-- Indexes for table `crosswordpuzzle2`
+--
+ALTER TABLE `crosswordpuzzle2`
+  ADD PRIMARY KEY (`crossPuzzle2_id`),
+  ADD KEY `ID` (`ID`);
+
+--
+-- Indexes for table `guessinggame1`
+--
+ALTER TABLE `guessinggame1`
+  ADD PRIMARY KEY (`guessingGame1_id`),
+  ADD KEY `ID` (`ID`);
+
+--
+-- Indexes for table `guessinggame2`
+--
+ALTER TABLE `guessinggame2`
+  ADD PRIMARY KEY (`guessingGame2_id`),
+  ADD KEY `ID` (`ID`);
+
+--
+-- Indexes for table `multiplechoice`
+--
+ALTER TABLE `multiplechoice`
+  ADD PRIMARY KEY (`multipleChoice_id`),
+  ADD KEY `ID` (`ID`);
+
+--
+-- Indexes for table `user_information`
+--
+ALTER TABLE `user_information`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `crosswordpuzzle1`
+--
+ALTER TABLE `crosswordpuzzle1`
+  MODIFY `crossPuzzle1_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `crosswordpuzzle2`
+--
+ALTER TABLE `crosswordpuzzle2`
+  MODIFY `crossPuzzle2_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `guessinggame1`
+--
+ALTER TABLE `guessinggame1`
+  MODIFY `guessingGame1_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `guessinggame2`
+--
+ALTER TABLE `guessinggame2`
+  MODIFY `guessingGame2_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `multiplechoice`
+--
+ALTER TABLE `multiplechoice`
+  MODIFY `multipleChoice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `user_information`
+--
+ALTER TABLE `user_information`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `crosswordpuzzle1`
+--
+ALTER TABLE `crosswordpuzzle1`
+  ADD CONSTRAINT `crosswordpuzzle1_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `user_information` (`ID`);
+
+--
+-- Constraints for table `crosswordpuzzle2`
+--
+ALTER TABLE `crosswordpuzzle2`
+  ADD CONSTRAINT `crosswordpuzzle2_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `user_information` (`ID`);
+
+--
+-- Constraints for table `guessinggame1`
+--
+ALTER TABLE `guessinggame1`
+  ADD CONSTRAINT `guessinggame1_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `user_information` (`ID`);
+
+--
+-- Constraints for table `guessinggame2`
+--
+ALTER TABLE `guessinggame2`
+  ADD CONSTRAINT `guessinggame2_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `user_information` (`ID`);
+
+--
+-- Constraints for table `multiplechoice`
+--
+ALTER TABLE `multiplechoice`
+  ADD CONSTRAINT `multiplechoice_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `user_information` (`ID`);
+COMMIT;
+

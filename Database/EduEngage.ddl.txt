@@ -1,0 +1,56 @@
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `adminUser` varchar(100) NOT NULL,
+  `adminPass` varchar(100) NOT NULL
+)
+
+CREATE TABLE `user_information` (
+  `ID` int(11) NOT NULL,
+  `FirstName` varchar(100) NOT NULL,
+  `LastName` varchar(100) NOT NULL,
+  `Birthdate` date NOT NULL,
+  `EmailAddress` varchar(100) NOT NULL,
+  `Username` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL
+)
+
+CREATE TABLE `crosswordpuzzle1` (
+  `crossPuzzle1_id` int(11) NOT NULL,
+  `crossPuzzle1_score` int(11) DEFAULT NULL,
+  `Username` varchar(200) DEFAULT NULL,
+  `ID` int(11) DEFAULT NULL,
+  `quiz_date` date DEFAULT curdate()
+)
+
+CREATE TABLE `crosswordpuzzle2` (
+  `crossPuzzle2_id` int(11) NOT NULL,
+  `crossPuzzle2_score` int(11) DEFAULT NULL,
+  `Username` varchar(200) DEFAULT NULL,
+  `ID` int(11) DEFAULT NULL,
+  `quiz_date` date DEFAULT curdate()
+)
+
+CREATE TABLE `guessinggame1` (
+  `guessingGame1_id` int(11) NOT NULL,
+  `guessingGame1_score` int(11) DEFAULT NULL,
+  `Username` varchar(200) DEFAULT NULL,
+  `ID` int(11) DEFAULT NULL,
+  `quiz_date` date DEFAULT curdate()
+)
+
+CREATE TABLE `guessinggame2` (
+  `guessingGame2_id` int(11) NOT NULL,
+  `guessingGame2_score` int(11) DEFAULT NULL,
+  `Username` varchar(200) DEFAULT NULL,
+  `ID` int(11) DEFAULT NULL,
+  `quiz_date` date DEFAULT curdate()
+)
+
+CREATE TABLE `multiplechoice` (
+  `multipleChoice_id` int(11) NOT NULL,
+  `multipleChoice_score` int(11) DEFAULT NULL,
+  `Username` varchar(200) DEFAULT NULL,
+  `ID` int(11) DEFAULT NULL,
+  `quiz_date` date DEFAULT curdate()
+)
+
